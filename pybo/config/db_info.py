@@ -1,4 +1,4 @@
-host = 'localhost'
-user = 'root'
+host = 'test.chacha.world'
+user = 'testUser'
 passwd = '1234'
 db = 'music'

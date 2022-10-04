@@ -2,7 +2,7 @@ import pybo.models.db_util as db
 
 def insert_user(user_dic) :
     sql = f'''
-        INSERT INTO USER(loginId, pass, username, sex, age, regDate)
+        INSERT INTO user(loginId, pass, username, sex, age, regDate)
         VALUES ('{user_dic['loginId']}', '{user_dic['passwd']}', '{user_dic['username']}',
         {user_dic['sex']}, {user_dic['age']}, NOW())  
     '''
@@ -34,3 +34,11 @@ def get_music(no) :
     '''
     
     return db.get_one(sql)
+
+def insert_history(hist_param) :
+    sql = f'''
+        INSERT INTO history(userno, musicno, regDate) VALUES 
+        ({hist_param['userno']}, {hist_param['musicno']}, NOW());
+    '''    
+
+    db.update(sql)
